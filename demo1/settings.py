@@ -88,13 +88,16 @@ WSGI_APPLICATION = 'demo1.wsgi.application'
 }"""
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('AZURE_MYSQL_NAME'),
-        'USER':os.environ.get('AZURE_MYSQL_USER'),
-        'PASSWORD':os.environ.get('AZURE_MYSQL_PASSWORD'),
-        'HOST':os.environ.get('AZURE_MYSQL_HOST'),
-        'PORT':os.environ.get('AZURE_MYSQL_PORT'),
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': '1703_DB',
+        'USER': 'shivakumar',
+        'PASSWORD': 'shiva@245',
+        'HOST': '1703-server.database.windows.net',
+        'PORT': 1433,
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+        },
+    },
 }
 
 # Password validation
