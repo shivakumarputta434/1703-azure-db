@@ -31,3 +31,8 @@ class GetUsers(APIView):
         user.delete()
         return Response("success")
     
+class GetUsers1(APIView):
+    def get(self, request):
+        msg = 'i am here'
+        return Response(msg)
+    

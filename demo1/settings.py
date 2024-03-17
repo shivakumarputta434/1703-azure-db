@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'emps'
+    'emps',
 ]
 
 MIDDLEWARE = [
@@ -75,7 +76,7 @@ WSGI_APPLICATION = 'demo1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'demo_031624',
@@ -84,8 +85,17 @@ DATABASES = {
         'HOST':'localhost',
         'PORT':3306,
     }
+}"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('AZURE_MYSQL_NAME'),
+        'USER':os.environ.get('AZURE_MYSQL_USER'),
+        'PASSWORD':os.environ.get('AZURE_MYSQL_PASSWORD'),
+        'HOST':os.environ.get('AZURE_MYSQL_HOST'),
+        'PORT':os.environ.get('AZURE_MYSQL_PORT'),
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
