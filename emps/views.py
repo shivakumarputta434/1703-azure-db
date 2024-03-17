@@ -5,7 +5,7 @@ from .models import SiteUsers
 
 
 def users(request, user_id):
-    msg = 'i am here'
+    msg = 'i am here user'
     name = SiteUsers.objects.get(id=user_id).name
     return HttpResponse(name)
 
