@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'demo1.wsgi.application'
 }"""
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
+        'ENGINE': 'django.db.backends.sqlserver',
         'NAME': '1703_DB',
         'USER': 'shivakumar',
         'PASSWORD': 'shiva@245',
