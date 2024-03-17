@@ -88,14 +88,14 @@ WSGI_APPLICATION = 'demo1.wsgi.application'
 }"""
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlserver',
+        'ENGINE': 'sql_server.pyodbc',
         'NAME': '1703_DB',
         'USER': 'shivakumar',
         'PASSWORD': 'shiva@245',
         'HOST': '1703-server.database.windows.net',
         'PORT': 1433,
         'OPTIONS': {
-            'driver': 'ODBC Driver 18 for SQL Server',
+            'driver': 'ODBC Driver 17 for SQL Server',
         },
     },
 }
